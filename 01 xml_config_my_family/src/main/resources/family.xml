@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreResourceNotFound">
+            <value>true</value>
+        </property>
+        <property name="locations">
+            <list>
+                <value>classpath:family.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="father" class="people.Parent">
+        <property name="name" value="${parent.father.name}"/>
+        <property name="isMale" value="true"/>
+        <property name="spouse" ref="mather"/>
+        <property name="children" ref="childrenList"/>
+    </bean>
+
+    <bean id="mather" class="people.Parent">
+        <property name="name" value="${parent.mather.name}"/>
+        <property name="isMale" value="false"/>
+        <property name="spouse" ref="father"/>
+        <property name="children" ref="childrenList"/>
+    </bean>
+
+    <util:list id="childrenList" value-type="people.IHuman">
+        <ref bean="brother"/>
+        <ref bean="sister"/>
+    </util:list>
+
+    <bean id="brother" class="people.Child">
+        <property name="name" value="${child.brother.name}"/>
+        <property name="isMale" value="true"/>
+        <property name="father" ref="father"/>
+        <property name="mather" ref="mather"/>
+        <property name="brSis" ref="sister"/>
+    </bean>
+
+    <bean id="sister" class="people.Child">
+        <property name="name" value="${child.sister.name}"/>
+        <property name="isMale" value="false"/>
+        <property name="father" ref="father"/>
+        <property name="mather" ref="mather"/>
+        <property name="brSis" ref="brother"/>
+    </bean>
+
+
+</beans>

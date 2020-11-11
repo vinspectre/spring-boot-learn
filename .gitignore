@@ -1,0 +1,5 @@
+# Project exclude paths
+/01 xml_config_my_family/target/
+/02 java_based_config_my_family/target/
+.idea
+*.iml
