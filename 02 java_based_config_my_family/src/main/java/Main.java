@@ -16,6 +16,7 @@ public class Main {
         Parent mather = ctx.getBean("mather",Parent.class);
         Child sister = ctx.getBean("sister", Child.class);
         Child brother = ctx.getBean("brother", Child.class);
+        //Не получилось сделать циклическую зависимость используя только Bean и Component
 //        father.tellAboutFamily();
         mather.tellAboutFamily();
 //        brother.tellAboutFamily();
