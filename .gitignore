@@ -1,5 +1,8 @@
 # Project exclude paths
 /01 xml_config_my_family/target/
 /02 java_based_config_my_family/target/
+/03 annotation_based_config_my_family/target/
+/04 ConfigurationProperties_SpringBootTest/target/
+/05 Shell - Books/target/
 .idea
 *.iml
