@@ -1,0 +1,9 @@
+books:
+  -
+    id: 111
+    author: marx
+    name: capital
+  -
+    id: 222
+    author: lucas
+    name: star wars
