@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:d:\Projects\spring-boot-learn\06 JdbcTemplate\src\main\resources\jdbc-template-test
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa

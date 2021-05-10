@@ -4,5 +4,6 @@
 /03 annotation_based_config_my_family/target/
 /04 ConfigurationProperties_SpringBootTest/target/
 /05 Shell - Books/target/
+/06 JdbcTemplate/target/
 .idea
 *.iml
